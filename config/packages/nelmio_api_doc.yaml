@@ -1,0 +1,18 @@
+nelmio_api_doc:
+    areas:
+        path_patterns: # an array of regexps (document only routes under /api, except /api/doc)
+            - ^/api(?!/doc$)
+    documentation:
+        info:
+            title: Event Crud
+            description: This is an awesome app!
+            version: 1.0.0
+        components:
+            securitySchemes:
+                Bearer:
+                    type: http
+                    scheme: bearer
+                    bearerFormat: JWT
+        security:
+            - Bearer: []
+            - ^/api(?!/doc/$) # Accepts routes under /api except /api/doc
